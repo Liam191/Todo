@@ -8,7 +8,7 @@
             "script": "test",
             "path": "functions/",
             "group": {
-                "kind": "test",
+                "kind": "build",
                 "isDefault": true
             }
         }
