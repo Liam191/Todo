@@ -1,3 +1,4 @@
+/* eslint-disable prefer-arrow-callback */
 const assert = require('assert');
 const supertest = require('supertest');
 const status = require('http-status-codes');
@@ -5,7 +6,6 @@ const status = require('http-status-codes');
 const { TodoServer } = require('../../src/todo/TodoServer');
 
 describe('POST /todo', function(){
-
     let app;
     beforeEach(function(){
         app = TodoServer();
