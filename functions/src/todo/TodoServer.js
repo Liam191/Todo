@@ -1,7 +1,8 @@
 "use strict";
 const express = require('express');
-const status = require('http-status-codes');
 const bodyparser = require('body-parser');
+
+const todoController = require('./todoController');
 
 function TodoServer(){
     const app = express();
@@ -9,13 +10,7 @@ function TodoServer(){
     app.use(bodyparser.json());
     app.use(bodyparser.urlencoded({ extended: true }));
     
-    app.all('*', (request, response) => {
-        if(request.body.name){
-            return response.sendStatus(status.CREATED);
-        } else {
-            return response.sendStatus(status.BAD_REQUEST);
-        }
-    });
+    app.use(todoController);
 
     return app;
 }
