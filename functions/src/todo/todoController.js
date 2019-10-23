@@ -4,10 +4,13 @@ const status = require('http-status-codes');
 
 todoController.all('/todo', (request, response) => {
     if(request.body.name){
-        return response.sendStatus(status.CREATED);
+        response.status(status.CREATED)
+        response.setHeader('Location', 'http://localhost:8080/todo/123456789a')
     } else {
-        return response.sendStatus(status.BAD_REQUEST);
+        response.status(status.BAD_REQUEST)
     }
+
+    return response.json();
 });
 
 module.exports = todoController;
