@@ -1,7 +1,7 @@
 const { assert } = require('chai');
 const TodoCore = require('../../src/todo/TodoCore');
 
-describe('Create todo item', function(){
+describe('Todo CRUD', function(){
     let core;
     beforeEach(function(){
         core = TodoCore();
