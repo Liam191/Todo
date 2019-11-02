@@ -4,8 +4,10 @@ function TodoCore(){
         addTodo
     };
 
-    function addTodo(){
-        throw new Error('Illegal Argument: addTodo requires "description" parameter');
+    function addTodo(description){
+        if(!description){
+            throw new Error('Illegal Argument: addTodo requires "description" parameter');
+        }
     }
 }
 
